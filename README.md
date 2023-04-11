@@ -17,10 +17,11 @@ OneMail is designed to help users manage their email in a more efficient way by 
 Installation
 
 Clone the OneMail repository from GitHub:
-git clone https://github.com/yourusername/onemail.git
-Navigate into the project directory:
+git clone [https://github.com/yourusername/onemail.git]
 
+Navigate into the project directory:
 cd onemail
+
 Create a virtual environment:
 python3 -m venv env
 
@@ -35,4 +36,4 @@ python onemail.py
 
 Note: If you encounter any errors related to PyQt5, please make sure that you have installed PyQt5 and its dependencies on your system. On Ubuntu, you can install these packages using the following command:
 
-Congratulations! You should now have the OneMail app up and running on your machine.
+Congratulations! You should now have the OneMail app up and running on your machine
