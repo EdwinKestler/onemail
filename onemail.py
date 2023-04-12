@@ -12,7 +12,7 @@ import re
 from email import message_from_string
 from email.policy import default
 import openai
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QTextEdit, QLineEdit, QTabWidget, QFormLayout, QFileDialog, QLabel, QProgressBar
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QTextEdit, QLineEdit, QHBoxLayout, QFormLayout, QFileDialog, QLabel, QProgressBar
 from imapclient import IMAPClient
 from cryptography.fernet import Fernet
 
@@ -28,40 +28,11 @@ class EmailReader(QWidget):
     
     def init_ui(self):
         self.layout = QVBoxLayout()
-         # Create a QTabWidget to organize the UI in tabs
-        self.tabs = QTabWidget()
 
-        # Create the settings tab
-        self.settings_tab = QWidget()
-        self.settings_layout = QVBoxLayout()
+        # Add this line to set a general font for the entire application
+        QApplication.instance().setStyleSheet("font: 12pt 'Segoe UI';")
 
         self.form_layout = QFormLayout()
-
-        # Add the input fields, buttons, and other UI elements...
-
-        # Add form_layout to settings_layout
-        self.settings_layout.addLayout(self.form_layout)
-
-        # Set the layout for the settings tab and add it to the tabs
-        self.settings_tab.setLayout(self.settings_layout)
-        self.tabs.addTab(self.settings_tab, "Settings")
-
-        # Create the main tab for email display and navigation
-        self.main_tab = QWidget()
-        self.main_layout = QVBoxLayout()
-
-        self.email_layout = QVBoxLayout()
-        self.email_layout.addWidget(self.subject_label)
-        self.email_layout.addWidget(self.email_body)
-        self.email_layout.addWidget(self.prev_button)
-        self.email_layout.addWidget(self.next_button)
-
-        self.main_layout.addLayout(self.email_layout)
-        self.main_tab.setLayout(self.main_layout)
-        self.tabs.addTab(self.main_tab, "Main")
-
-        # Add the tabs to the main layout
-        self.layout.addWidget(self.tabs)
 
         self.server_input = QLineEdit()
         self.form_layout.addRow('Email Server:', self.server_input)
@@ -104,16 +75,6 @@ class EmailReader(QWidget):
                 background-color: #45a049;
             }
         """)
-        # Add form_layout to settings_layout
-        self.settings_layout.addLayout(self.form_layout)
-
-        # Set the layout for the settings tab and add it to the tabs
-        self.settings_tab.setLayout(self.settings_layout)
-        self.tabs.addTab(self.settings_tab, "Settings")
-
-        # Create the main tab for email display and navigation
-        self.main_tab = QWidget()
-        self.main_layout = QVBoxLayout()
 
         self.subject_label = QLabel('Subject:')
         self.layout.addWidget(self.subject_label)
@@ -162,7 +123,7 @@ class EmailReader(QWidget):
         self.browse_button = QPushButton('Browse')
         self.browse_button.clicked.connect(self.browse_key_file)
         self.form_layout.addRow('', self.browse_button)
-              
+
         self.setLayout(self.layout)
         self.setWindowTitle('ONEMAIL-Simple GPT4 asisted Email analyser by Edwin Kestler')
         self.setGeometry(100, 100, 600, 400)

@@ -17,7 +17,7 @@ OneMail is designed to help users manage their email in a more efficient way by 
 Installation
 
 Clone the OneMail repository from GitHub:
-git clone [https://github.com/yourusername/onemail.git]
+git clone [https://github.com/EdwinKestler/onemail.git]
 
 Navigate into the project directory:
 cd onemail
@@ -34,6 +34,12 @@ pip install -r requirements.txt
 Run the OneMail app:
 python onemail.py
 
-Note: If you encounter any errors related to PyQt5, please make sure that you have installed PyQt5 and its dependencies on your system. On Ubuntu, you can install these packages using the following command:
+Note: If you encounter any errors related to PyQt6, please make sure that you have installed PyQt6 and its dependencies on your system. On Ubuntu, you can install these packages using the following command:
 
 Congratulations! You should now have the OneMail app up and running on your machine
+
+The ONEMAIL application window should open. Enter your email server, email user, email password, and OpenAI API key. Then, click the "Connect" button to connect to your email account and start analyzing your emails.
+
+The application will display the subject and content of the current email, along with a suggested response, an importance score, and next steps. You can navigate between unread emails using the "Previous" and "Next" buttons.
+
+That's it! ONEMAIL should be up and running, ready to help you manage your emails.
