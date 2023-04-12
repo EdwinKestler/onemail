@@ -13,7 +13,7 @@ from email import message_from_bytes
 from email.policy import default
 import openai
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QTextEdit, QLineEdit, QHBoxLayout, QFormLayout, QPlainTextEdit, QLabel, QProgressBar
-
+import base64
 
 class EmailReader(QWidget):
     def __init__(self):
